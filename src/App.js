@@ -1,22 +1,56 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+
+// import { useTransition, animated } from 'react-spring';
 // import { Flipper, Flipped } from'react-flip-toolkit';
 
 function App() {
-  const [todos, setTodos] = useState([
-    {
-      content: 'Task 1',
-      isCompleted: true,
-    },
-    {
-      content: 'Task 2',
-      isCompleted: false,
-    },
-    {
-      content: 'Task 3',
-      isCompleted: false,
+  // Import tasks from local storage
+  const loadTodos = () => {
+    const savedTodos = localStorage.getItem('todos');
+    if (savedTodos) {
+      return JSON.parse(savedTodos);
     }
-  ]);
+    // Example tasks if the local storage is empty
+    return [
+         {
+      content: 'Example task 1',
+      isCompleted: false,
+    },
+    {
+      content: 'Example task 2',
+      isCompleted: false,
+    },
+    {
+      content: 'Done Example task',
+      isCompleted: true,
+    }
+ 
+    ];
+  }
+
+  const [todos, setTodos] = useState(loadTodos());
+
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos]);
+
+
+  // FOR TESTING
+  // const [todos, setTodos] = useState([
+  //   {
+  //     content: 'Task 1',
+  //     isCompleted: true,
+  //   },
+  //   {
+  //     content: 'Task 2',
+  //     isCompleted: false,
+  //   },
+  //   {
+  //     content: 'Task 3',
+  //     isCompleted: false,
+  //   }
+  // ]);
 
   function handleKeyDown(e, i) {
     if (e.key === 'Enter') {
@@ -67,6 +101,7 @@ function App() {
 
     setTodos(temporaryTodos);
   }
+
 
   return (
     <div className="app">
