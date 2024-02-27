@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
+// import { Flipper, Flipped } from'react-flip-toolkit';
 
 function App() {
   const [todos, setTodos] = useState([
@@ -56,7 +56,15 @@ function App() {
 
   function toggleTodoCompleteAtIndex(index) {
     const temporaryTodos = [...todos];
+    // Toggle the isCompleted property
     temporaryTodos[index].isCompleted = !temporaryTodos[index].isCompleted;
+
+    // If the todo is now completed, move it to the end of the list
+    if (temporaryTodos[index].isCompleted) {
+      const completedTodo = temporaryTodos.splice(index, 1)[0];
+      temporaryTodos.push(completedTodo);
+    }
+
     setTodos(temporaryTodos);
   }
 
