@@ -1,0 +1,142 @@
+body {
+  background-color: #282c34;
+  min-height: 100vh;
+  /* font color to green */
+}
+
+.app {
+  padding-top: 10rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.todo {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.todo-is-completed .checkbox {
+  color: #000;
+  background: #fff;
+}
+
+.todo-is-completed input {
+  text-decoration: line-through;
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+  cursor: pointer;
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color .2s ease-in-out;
+  border: 1px solid #fff;
+}
+
+.checkbox:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0);
+}
+
+.checkbox-checked {
+  color: #000;
+  background: #fff;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  line-height: 2rem;
+  width: 500px;
+}
+
+input {
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 1.4rem;
+  outline: none;
+  width: 100%;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  margin: 0;
+  color: #fff;
+}
+
+p {
+  color: #fff;
+}   
+
+@media (max-width: 768px) {
+  .app {
+    padding-top: 5rem; 
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  .header {
+<<<<<<< HEAD
+=======
+    /* Keep it centered, but maybe let's give the items a bit more breathing room */
+>>>>>>> 9589431a799ae2c32e5b19ee65d06b6d5bc73d0d
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .todo-list {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .todo {
+    display: inline-flex;
+    align-items: center;
+    margin: 0.5rem 0; 
+  }
+
+  ul {
+    width: 100%; 
+  }
+
+  input, p {
+    font-size: 1rem;
+  }
+
+  .checkbox {
+    width: 24px; 
+    height: 24px;
+    margin-right: 5px; 
+  }
+<<<<<<< HEAD
+}
+=======
+}
+>>>>>>> 9589431a799ae2c32e5b19ee65d06b6d5bc73d0d
