@@ -1,6 +1,7 @@
 body {
   background-color: #282c34;
   min-height: 100vh;
+  /* font color to green */
 }
 
 .app {
@@ -12,12 +13,6 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 20vmin;
-  pointer-events: none;
 }
 
 .todo-list {
@@ -32,6 +27,8 @@ body {
   display: flex;
   align-items: center;
   margin: 1rem 0;
+  width: 100%;
+  padding: 0.5rem;
 }
 
 .todo-is-completed .checkbox {
@@ -63,7 +60,7 @@ body {
 }
 
 .checkbox-checked {
-  color: black;
+  color: #000;
   background: #fff;
 }
 
@@ -83,23 +80,55 @@ input {
   width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 h1 {
-  font-size: 2rem;
-  font-weight: 400;
+  font-size: 3rem;
+  font-weight: 600;
   margin: 0;
   color: #fff;
-  padding-bottom: 20px;
 }
 
 p {
   color: #fff;
+}   
+
+@media (max-width: 768px) {
+  .app {
+    padding-top: 5rem; 
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .todo-list {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .todo {
+    display: inline-flex;
+    align-items: center;
+    margin: 0.5rem 0; 
+  }
+
+  ul {
+    width: 100%; 
+  }
+
+  input, p {
+    font-size: 1rem;
+  }
+
+  .checkbox {
+    width: 24px; 
+    height: 24px;
+    margin-right: 5px; 
+  }
 }

@@ -106,7 +106,7 @@ function App() {
   return (
     <div className="app">
       <div className="header">
-        <h1>Things (To) Do Today!</h1>
+        <h1>Must (To) Do Today!</h1>
       <p>Press Enter to Add an item</p>
       <p>Press Backspace to Remove an item</p>
       </div>
