@@ -35,22 +35,18 @@ function App() {
     localStorage.setItem('todos', JSON.stringify(todos));
   }, [todos]);
 
-
-  // FOR TESTING
-  // const [todos, setTodos] = useState([
-  //   {
-  //     content: 'Task 1',
-  //     isCompleted: true,
-  //   },
-  //   {
-  //     content: 'Task 2',
-  //     isCompleted: false,
-  //   },
-  //   {
-  //     content: 'Task 3',
-  //     isCompleted: false,
-  //   }
-  // ]);
+  // Automatically add an empty todo at the start of the list if all tasks are completed or the list is cleared
+  useEffect(() => {
+    if (todos.every(todo => todo.isCompleted) || todos.length === 0) {
+      setTodos([
+        {
+          content: '',
+          isCompleted: false,
+        },
+     ...todos,
+      ]);
+    }
+  })
 
   function handleKeyDown(e, i) {
     if (e.key === 'Enter') {
@@ -98,7 +94,6 @@ function App() {
       const completedTodo = temporaryTodos.splice(index, 1)[0];
       temporaryTodos.push(completedTodo);
     }
-
     setTodos(temporaryTodos);
   }
 
@@ -128,7 +123,16 @@ function App() {
             </div>
           ))}
         </ul>
+        <div className="clearDone">
+          {/* Button for the completed tasks */}
+          <button type="button" className='btn' 
+            onClick={() => setTodos(todos.filter(todo =>!todo.isCompleted))}>Clear Completed
+          </button>
+        </div>
       </form>
+      <div className="footer">
+        <p>Created by <a href='https://arttu.info'>Arttu Heinilä</a></p>
+      </div>
     </div>
   );
 }
