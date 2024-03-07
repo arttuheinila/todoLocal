@@ -56,7 +56,18 @@ function App() {
       e.preventDefault();
       return removeTodoAtIndex(i);
     }
+    // Navigate up the list
+    if (e.key === 'ArrowUp') {
+      if (i === 0) return;
+      document.forms[0].elements[i - 1].focus();
+    }
+    // Navigate down te list
+    if (e.key === 'ArrowDown') {
+      if (i === todos.length - 1) return;
+      document.forms[0].elements[i + 1].focus();
+    } 
   }
+
 
   function createTodoAtIndex(e, i) {
     const newTodos = [...todos];
