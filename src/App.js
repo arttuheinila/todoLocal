@@ -61,12 +61,13 @@ function App() {
       if (i === 0) return;
       document.forms[0].elements[i - 1].focus();
     }
-    // Navigate down te list
+    // Navigate down the list
     if (e.key === 'ArrowDown') {
       if (i === todos.length - 1) return;
       document.forms[0].elements[i + 1].focus();
     } 
   }
+
 
 
   function createTodoAtIndex(e, i) {
@@ -113,8 +114,7 @@ function App() {
     <div className="app">
       <div className="header">
         <h1>Must (To) Do Today!</h1>
-      <p>Press Enter to Add an item</p>
-      <p>Press Backspace to Remove an item</p>
+      <p>Press: <strong>Enter</strong> to Add, <strong>Backspace</strong> to Remove and <strong>Arrow keys</strong> to navigate between items.</p>    
       </div>
       <form className="todo-list">
         <ul>
