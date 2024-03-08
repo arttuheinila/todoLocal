@@ -125,6 +125,20 @@ function App() {
     setTodos(temporaryTodos);
   }
 
+  // Star at index + move the starred to index[0]
+  function toggleStarAtIndex(index) {
+    const temporaryTodos = [...todos];
+    // Toggle the isCompleted property
+    temporaryTodos[index].isStarred =!temporaryTodos[index].isStarred;
+
+    // If the todo is now completed, move it to the end of the list
+    if (temporaryTodos[index].isStarred) {
+      const starredTodo = temporaryTodos.splice(index, 1)[0];
+      temporaryTodos.unshift(starredTodo);
+    }
+    setTodos(temporaryTodos);
+  }
+
 
   return (
     <div className="app">
@@ -136,6 +150,9 @@ function App() {
         <ul>
           {todos.map((todo, i) => (
             <div className={`todo ${todo.isCompleted && 'todo-is-completed'}`}>
+              <div className={`star ${todo.isStarred ? 'starred' : ''}`} onClick={() => toggleStarAtIndex(i)}>
+                  <span></span>
+              </div>
               <div className={'checkbox'} onClick={() => toggleTodoCompleteAtIndex(i)}>
                 {todo.isCompleted && (
                   <span>&#x2714;</span>

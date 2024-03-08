@@ -71,6 +71,23 @@ body {
   background: #fff;
 }
 
+.star {
+  cursor: pointer;
+  margin-right: 8px;
+  user-select: none;
+}
+
+.star:before {
+  content: '\2606'; /* Empty star */
+  font-size: 24px;
+  color: #ccc; /* Light grey for not starred */
+}
+
+.todo .star.starred:before {
+  content: '\2605'; /* Filled star */
+  color: rgb(209, 209, 39); /* Yellow for starred */
+}
+
 ul {
   list-style: none;
   padding: 0;
@@ -172,6 +189,11 @@ p {
     display: inline-flex;
     align-items: center;
     margin: 0.5rem 0; 
+  }
+
+  p {
+    margin: 1rem 1rem;
+    text-align: center;
   }
 
   ul {
