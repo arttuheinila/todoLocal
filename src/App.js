@@ -75,8 +75,15 @@ function App() {
       if (i === todos.length - 1) return;
       document.forms[0].elements[i + 1].focus();
     } 
+    // If ctrl+enter is pressed toggle the todo as completed/incomplete
+    if (e.key === 'Enter' && e.ctrlKey) {
+      toggleTodoCompleteAtIndex(i);
+      // set focus to same index that it when completing/incompleting the task
+      setTimeout(() => {
+        document.forms[0].elements[i].focus();
+      }, 0);      
+    }
   }
-
 
 
   function createTodoAtIndex(e, i) {
