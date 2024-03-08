@@ -1,7 +1,14 @@
+.app {
+  min-height: 100vh; /* Ensure it covers at least the full height of the viewport */
+  width: 100vw; /* Full width of the viewport */
+  background-image: url("../public/background1.jpg"); /* Path to your image */
+  background-size: auto; /* Or you can specify a size to control how the image repeats */
+  background-position: center top; /* Align the image at the top and center it horizontally */
+  background-repeat: repeat-y; /* Repeat the image vertically */
+}
 body {
   background-color: #282c34;
   min-height: 100vh;
-  /* font color to green */
 }
 
 .app {
@@ -91,6 +98,7 @@ p {
   color: #fff;
 }   
 
+
 .footer {
   display: flex;
   flex-direction: column;
@@ -100,7 +108,9 @@ p {
   bottom: 0;
   width: 100%;
   background-color: white;
-  opacity: 0.7;
+  /* opacity: 0.8; */
+  /* Make sure no element goes under the footer */
+  z-index: 100;
 }
 
 .footer p {
@@ -115,8 +125,6 @@ p {
 }
 
 /* Styling for button */
-
-
 .btn {
   display: inline-block;
   padding: 8px 16px;
@@ -127,6 +135,7 @@ p {
   font-size: 1rem;
   cursor: pointer;
   opacity: 0.6;
+  margin-bottom: 50px;
 }
 
 .btn:hover {

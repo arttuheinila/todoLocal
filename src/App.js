@@ -5,6 +5,15 @@ import './App.css';
 // import { Flipper, Flipped } from'react-flip-toolkit';
 
 function App() {
+  // const appStyle = {
+  //   height: '100vh',
+  //   width: '100vw',
+  //   backgroundImage: `url('${process.env.PUBLIC_URL}/background.jpg')`, // Assuming image is in the public folder
+  //   backgroundSize: 'cover',
+  //   backgroundPosition: 'center',
+  //   backgroundRepeat: 'repeat',
+  // };
+
   // Import tasks from local storage
   const loadTodos = () => {
     const savedTodos = localStorage.getItem('todos');
