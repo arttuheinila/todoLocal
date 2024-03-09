@@ -52,6 +52,8 @@ function App() {
       e.preventDefault();
       return removeTodoAtIndex(i);
     }
+    // If the 
+
     // Navigate up the list
     if (e.key === 'ArrowUp') {
       if (i === 0) return;
@@ -131,7 +133,7 @@ function App() {
     <div className="app">
       <div className="header">
         <h1>Must (To) Do Today!</h1>
-      <p>Press: <strong>Enter</strong> to Add, <strong>Backspace</strong> to Remove and <strong>Arrow keys</strong> to navigate between items.</p>    
+      <p>Press: <strong>Enter</strong> to Add, <strong>Backspace</strong> to Remove and <strong>Arrow keys</strong> to navigate between items. <strong>Ctrl+Enter</strong> to quick complete items.</p>    
       </div>
       <form className="todo-list">
         <ul>
