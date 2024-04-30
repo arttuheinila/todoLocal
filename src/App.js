@@ -164,7 +164,7 @@ function App() {
         </div>
       </form>
       <div className="footer">
-        <p>Created by <a href='https://arttu.info'>Arttu Heinilä</a></p>
+        <p>Created by <a href='https://arttu.info'>Arttu Heinilä</a>. To view the Full Stack app go <a href="https://arttu.info/todo">here</a></p>
       </div>
     </div>
   );
