@@ -23,4 +23,5 @@ Move between items with tab or clicking with mouse
 
 The app uses local storage so it will remember your items from session to session with the same browser. Remember that clearing local storage will permanently delete all the items. 
 
-Live site here arttu.info/todo/
+Live site here arttu.info/tdf/
+The Full Stack version at https://github.com/arttuheinila/todo
